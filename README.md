@@ -5,8 +5,9 @@ A compact composition root for routes, middleware, and problem responses.
 ```ts
 import { HttpApp } from "@lucid-softworks/http-app";
 
-const app = new HttpApp().use(logging).get("/health", () => new Response("ok"));
+const app = new HttpApp().get("/health", () => new Response("ok"));
 
+const request = new Request("https://example.com/health");
 const response = await app.fetch(request);
 ```
 
